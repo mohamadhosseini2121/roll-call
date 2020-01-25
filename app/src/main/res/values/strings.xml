@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_input_course">InputCourseActivity</string>
+
+    <string name="nv_menu_setting">تنظیمات</string>
+
+    <string name="course_input_name">نام درس</string>
+    <string name="course_input_year">سال تحصیلی</string>
+    <string name="course_input_degree">مقطع تحصیلی</string>
+    <string name="course_input_language">زبان ارائه</string>
+</resources>

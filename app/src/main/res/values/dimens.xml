@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="toolbar_horizontal_padding">10dp</dimen>
+    <dimen name="margin_view">8dp</dimen>
+    <dimen name="margin_view_x2">16dp</dimen>
+    <dimen name="text_toolbar">20dp</dimen>
+    <dimen name="et_corner_radius">8dp</dimen>
+
+    <dimen name="normal_font_size">12sp</dimen>
+    <dimen name="large_font_size">16sp</dimen>
+    <dimen name="et_padding">8dp</dimen>
+    <dimen name="layout_padding">16dp</dimen>
+    <dimen name="layout_padding_8">8dp</dimen>
+
+</resources>
