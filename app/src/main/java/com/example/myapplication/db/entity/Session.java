@@ -3,11 +3,13 @@ package com.example.myapplication.db.entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(foreignKeys = @ForeignKey(entity = Course.class,
         parentColumns = "course_id",
-        childColumns = "course_id"))
+        childColumns = "course_id"),
+indices = {@Index(value = "course_id")})
 public class Session {
 
     @PrimaryKey(autoGenerate = true)

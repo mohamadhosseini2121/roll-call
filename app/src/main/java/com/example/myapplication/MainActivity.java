@@ -23,6 +23,8 @@ import android.widget.ListAdapter;
 import com.example.myapplication.db.AppDatabase;
 import com.example.myapplication.db.ServerDatabase;
 import com.example.myapplication.db.entity.Course;
+import com.example.myapplication.db.entity.DataFakeGenerator;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initViews();
+        DataFakeGenerator.addFakeCourses(this);
     }
 
     private void initViews() {

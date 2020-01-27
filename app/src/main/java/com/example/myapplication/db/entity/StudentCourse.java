@@ -3,6 +3,7 @@ package com.example.myapplication.db.entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(foreignKeys = {
@@ -13,8 +14,12 @@ import androidx.room.PrimaryKey;
         @ForeignKey(entity = Course.class,
                 parentColumns = "course_id",
                 childColumns = "course_id"
+        )},
+        indices = {
+        @Index(value = "student_id"
+        ),
+        @Index(value = "course_id")}
         )
-})
 public class StudentCourse {
 
     @PrimaryKey(autoGenerate = true)

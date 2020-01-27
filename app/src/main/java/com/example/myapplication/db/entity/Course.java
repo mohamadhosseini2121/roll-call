@@ -19,7 +19,15 @@ public class Course {
     @ColumnInfo(name = "academic_year")
     private String academicYear;
 
-    private short semester;
+    private int semester;
+
+    public Course (String name, int group, String academicYear, int semester){
+
+        this.name = name;
+        this.group = group;
+        this.academicYear = academicYear;
+        this.semester = semester;
+    }
 
 
     public void setCid(Long cid) {
@@ -54,11 +62,11 @@ public class Course {
         this.academicYear = academicYear;
     }
 
-    public short getSemester() {
+    public int getSemester() {
         return semester;
     }
 
-    public void setSemester(short semester) {
+    public void setSemester(int semester) {
         this.semester = semester;
     }
 }

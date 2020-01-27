@@ -42,7 +42,7 @@ public class InputCourseAdapter extends RecyclerView.Adapter<InputCourseAdapter.
     public void onBindViewHolder(@NonNull InputCourseViewHolder holder, int position) {
         Course course = courses.get(position);
         holder.tvCourseName.setText(course.getName());
-        holder.tvCourseGroup.setText(course.getGroup());
+        holder.tvCourseGroup.setText(String.valueOf(course.getGroup()));
         holder.rbSelectionState.setChecked(lastSelectedPosition == position);
 
     }

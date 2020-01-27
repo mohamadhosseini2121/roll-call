@@ -61,7 +61,7 @@ public class InputCourseActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.btn_add_course)
-    private void addCourse(){
+    public void addCourse(){
 
         if (adapter.getSelectedCourse() == null)
             Snackbar.make(coordinatorLayout,"درسی انتخاب نشده است",Snackbar.LENGTH_SHORT).show();

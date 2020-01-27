@@ -45,7 +45,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         Course course = courses.get(position);
         holder.tvName.setText(course.getName());
-        holder.tvGroup.setText(course.getGroup());
+        holder.tvGroup.setText(String.valueOf(course.getGroup()));
 
         if (isCheckBoxVisible) {
             holder.checkBox.setVisibility(View.VISIBLE);
