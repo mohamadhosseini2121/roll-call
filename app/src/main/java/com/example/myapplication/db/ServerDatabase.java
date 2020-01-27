@@ -12,9 +12,9 @@ import androidx.room.RoomDatabase;
 
 
 @Database(entities = {Course.class, Student.class, Session.class, StudentSession.class, StudentCourse.class} , version = 1)
-public abstract class AppDatabase extends RoomDatabase {
+public abstract class ServerDatabase extends RoomDatabase {
 
-    private static AppDatabase instance;
+    private static ServerDatabase instance;
 
     public abstract CourseDao getCourseDao();
     public abstract StudentDao getStudentDao();
@@ -22,12 +22,12 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract StudentCourseDao getStudentCourseDao();
     public abstract StudentSessionDao getStudentSessionDao();
 
-    public static AppDatabase getInstance(Context context) {
+    public static ServerDatabase getInstance(Context context) {
 
         if (instance == null) {
             instance = Room.databaseBuilder(context,
-                    AppDatabase.class,
-                    "AppDB").allowMainThreadQueries().build();
+                    ServerDatabase.class,
+                    "ServerDB").allowMainThreadQueries().build();
         }
         return instance;
 

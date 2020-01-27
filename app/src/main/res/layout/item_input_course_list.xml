@@ -17,17 +17,8 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/layout_padding">
 
-        <CheckBox
-            android:id="@+id/ch_course_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:theme="@style/CheckBoxTheme"
-            android:visibility="invisible" />
-
         <TextView
-            android:id="@+id/tv_name_course_item"
+            android:id="@+id/tv_name_course_input_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -40,15 +31,21 @@
 
 
         <TextView
-            android:id="@+id/tv_group_course_item"
+            android:id="@+id/tv_group_course_input_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_name_course_item"
+            android:layout_below="@id/tv_name_course_input_item"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/margin_view"
             android:layout_marginEnd="@dimen/margin_view"
             android:textSize="@dimen/normal_font_size"
             tools:text="گروه" />
+
+        <RadioButton
+            android:id="@+id/rb_selection_state_course_input_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"/>
 
     </RelativeLayout>
 

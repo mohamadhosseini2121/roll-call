@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -12,11 +13,15 @@ import androidx.room.Room;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 
 import com.example.myapplication.db.AppDatabase;
+import com.example.myapplication.db.ServerDatabase;
 import com.example.myapplication.db.entity.Course;
 import java.util.List;
 
@@ -47,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         setupToolbar();
         recyclerView.setLayoutManager(new LinearLayoutManager(this , RecyclerView.VERTICAL , false ));
         appDatabase = AppDatabase.getInstance(getApplicationContext());
-        courses = appDatabase.getCourseDao().getAllCourses();
-        adapter = new CourseAdapter(this , courses);
-        recyclerView.setAdapter(adapter);
 
     }
 
@@ -69,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        courses = appDatabase.getCourseDao().getAllCourses();
+        adapter = new CourseAdapter(this , courses);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -81,4 +85,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this , InputCourseActivity.class);
         startActivity(intent);
     }
+
+
+
 }

@@ -14,6 +14,8 @@ public class Course {
     @ColumnInfo(name = "course_name")
     private String name;
 
+    private int group;
+
     @ColumnInfo(name = "academic_year")
     private String academicYear;
 
@@ -34,6 +36,14 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getGroup() {
+        return group;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
     }
 
     public String getAcademicYear() {
