@@ -9,4 +9,5 @@
     <string name="course_input_degree">مقطع تحصیلی</string>
     <string name="course_input_language">زبان ارائه</string>
     <string name="course_input_add">اضافه کردن</string>
+    <string name="title_activity_session">SessionActivity</string>
 </resources>

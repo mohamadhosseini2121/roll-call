@@ -102,11 +102,12 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                 }
             }
 
-            /*else {
-                Intent intent = new Intent(context, CourseDetailActivity.class);
-                intent.putExtra(KEY_INTENT_ID_COURSE, getItem(getAdapterPosition()).getId());
+            else {
+                Intent intent = new Intent(context, SessionActivity.class);
+                Course course = getItem(getAdapterPosition());
+                intent.putExtra(KEY_INTENT_ID_COURSE, course.getCid());
                 context.startActivity(intent);
-            }*/
+            }
 
         }
 
