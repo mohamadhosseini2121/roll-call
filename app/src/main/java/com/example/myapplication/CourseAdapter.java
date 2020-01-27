@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
+    public static final String KEY_INTENT_ID_COURSE = "course_id_key";
     private Context context;
     private List<Course> courses;
     private boolean isCheckBoxVisible;
@@ -45,7 +46,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         Course course = courses.get(position);
         holder.tvName.setText(course.getName());
-        holder.tvGroup.setText(String.valueOf(course.getGroup()));
+        holder.tvGroup.setText(String.valueOf("گروه: " + course.getGroup()));
+        holder.tvSemester.setText(String.valueOf("نیمسال: " + course.getSemester()));
+        holder.tvAcademicYear.setText(course.getAcademicYear());
 
         if (isCheckBoxVisible) {
             holder.checkBox.setVisibility(View.VISIBLE);
@@ -64,12 +67,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         return courses.get(position);
     }
 
-    public class CourseViewHolder extends RecyclerView.ViewHolder{
+    public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
 
         @BindView(R.id.tv_name_course_item)
         TextView tvName;
         @BindView(R.id.tv_group_course_item)
         TextView tvGroup;
+        @BindView(R.id.tv_semester_course_item)
+        TextView tvSemester;
+        @BindView(R.id.tv_academic_year_course_item)
+        TextView tvAcademicYear;
         @BindView(R.id.ch_course_item)
         CheckBox checkBox;
         @BindView(R.id.card_item_course)
@@ -79,12 +86,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            //cardView.setOnClickListener(this);
-            //cardView.setOnLongClickListener(this);
+            cardView.setOnClickListener(this);
+            cardView.setOnLongClickListener(this);}
 
-        }
 
-        /*@Override
+        @Override
         public void onClick(View v) {
             if (isCheckBoxVisible) {
                 if (booleanArray.get(getAdapterPosition(), false)) {
@@ -96,11 +102,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                 }
             }
 
-            else {
+            /*else {
                 Intent intent = new Intent(context, CourseDetailActivity.class);
-                intent.putExtra(Constants.KEY_INTENT_ID_COURSE, getItem(getAdapterPosition()).getId());
+                intent.putExtra(KEY_INTENT_ID_COURSE, getItem(getAdapterPosition()).getId());
                 context.startActivity(intent);
-            }
+            }*/
 
         }
 
@@ -113,6 +119,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
             }
             return true;
-        }*/
+        }
     }
 }

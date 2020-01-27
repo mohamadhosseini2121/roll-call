@@ -41,8 +41,10 @@ public class InputCourseAdapter extends RecyclerView.Adapter<InputCourseAdapter.
     @Override
     public void onBindViewHolder(@NonNull InputCourseViewHolder holder, int position) {
         Course course = courses.get(position);
-        holder.tvCourseName.setText(course.getName());
-        holder.tvCourseGroup.setText(String.valueOf(course.getGroup()));
+        holder.tvName.setText(course.getName());
+        holder.tvGroup.setText(String.valueOf("گروه: " + course.getGroup()));
+        holder.tvSemester.setText(String.valueOf("نیمسال: " + course.getSemester()));
+        holder.tvAcademicYear.setText(course.getAcademicYear());
         holder.rbSelectionState.setChecked(lastSelectedPosition == position);
 
     }
@@ -62,9 +64,13 @@ public class InputCourseAdapter extends RecyclerView.Adapter<InputCourseAdapter.
     public class InputCourseViewHolder extends RecyclerView.ViewHolder{
 
         @BindView(R.id.tv_name_course_input_item)
-        TextView tvCourseName;
+        TextView tvName;
         @BindView(R.id.tv_group_course_input_item)
-        TextView tvCourseGroup;
+        TextView tvGroup;
+        @BindView(R.id.tv_semester_course_input_item)
+        TextView tvSemester;
+        @BindView(R.id.tv_academic_year_course_input_item)
+        TextView tvAcademicYear;
         @BindView(R.id.rb_selection_state_course_input_item)
         RadioButton rbSelectionState;
 

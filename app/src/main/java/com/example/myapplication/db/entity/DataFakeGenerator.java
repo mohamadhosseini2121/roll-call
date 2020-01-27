@@ -10,12 +10,14 @@ public class DataFakeGenerator {
 
         ServerDatabase serverDatabase = ServerDatabase.getInstance(context);
         Course course;
-        for (int i = 1; i < 31; i++) {
+        for (int i = 1; i < 21; i++) {
 
-            course = new Course("Course" + i,1,"97-98",2);
+            course = new Course(String.valueOf("درس " + i),1,"97-98",2);
             serverDatabase.getCourseDao().addCourse(course);
 
         }
+        course = new Course("درس محاسبات الگوریتم و انتگرالیسم شمس تبریزی و برادران به غیر از اصغر" ,1,"97-98",2);
+        serverDatabase.getCourseDao().addCourse(course);
 
     }
 }

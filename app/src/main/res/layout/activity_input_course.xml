@@ -28,28 +28,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!--<include layout="@layout/content_input_course" />-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_input_course_ac"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_add_course"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/button_height"
-        android:layout_gravity="bottom"
-        android:layout_marginEnd="@dimen/margin_view"
-        android:layout_marginStart="@dimen/margin_view"
-        android:text="@string/course_input_add"
-        android:textSize="@dimen/large_font_size"
-        style="@style/ButtonTheme">
-
-    </com.google.android.material.button.MaterialButton>
-
+    <include layout="@layout/content_input_course" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

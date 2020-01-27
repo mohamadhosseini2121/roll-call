@@ -9,19 +9,21 @@
     android:layout_marginRight="@dimen/layout_padding"
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="7dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    android:layoutDirection="rtl">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/layout_padding">
+        android:padding="@dimen/layout_padding"
+        android:layoutDirection="rtl">
 
         <TextView
             android:id="@+id/tv_name_course_input_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/margin_view"
             android:layout_marginEnd="@dimen/margin_view"
             android:maxLines="2"
@@ -35,17 +37,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_name_course_input_item"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/margin_view"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_view_x2"
             android:layout_marginEnd="@dimen/margin_view"
             android:textSize="@dimen/normal_font_size"
             tools:text="گروه" />
+
+        <TextView
+            android:id="@+id/tv_semester_course_input_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/tv_academic_year_course_input_item"
+            android:layout_alignBaseline="@id/tv_group_course_input_item"
+            android:layout_marginEnd="@dimen/margin_view"
+            tools:text="نیمسال اول"/>
+
+        <TextView
+            android:id="@+id/tv_academic_year_course_input_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/tv_group_course_input_item"
+            android:layout_marginEnd="@dimen/margin_view"
+            tools:text="98-97"/>
 
         <RadioButton
             android:id="@+id/rb_selection_state_course_input_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
